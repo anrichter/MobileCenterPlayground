@@ -5,7 +5,8 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="PrismUnityApp.Views.MainPage"
              Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+  <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
     <Label Text="{Binding Title}" />
+    <Label Text="{Binding Subtitle}" />
   </StackLayout>
 </ContentPage>

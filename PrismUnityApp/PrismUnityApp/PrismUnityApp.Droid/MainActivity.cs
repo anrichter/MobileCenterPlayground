@@ -1,18 +1,16 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-using Prism.Unity;
+using Microsoft.Azure.Mobile;
 using Microsoft.Practices.Unity;
+using Prism.Unity;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 
 namespace PrismUnityApp.Droid
 {
     [Activity(Label = "PrismUnityApp", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -21,7 +19,9 @@ namespace PrismUnityApp.Droid
 
             base.OnCreate(bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
+            Forms.Init(this, bundle);
+            MobileCenter.Configure("c655a85b-fe89-400c-b54f-fd8bd0f26f86");
+
             LoadApplication(new App(new AndroidInitializer()));
         }
     }
@@ -30,8 +30,6 @@ namespace PrismUnityApp.Droid
     {
         public void RegisterTypes(IUnityContainer container)
         {
-
         }
     }
 }
-
